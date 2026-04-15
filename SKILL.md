@@ -1,18 +1,16 @@
 ---
-name: claude-code-dispatch
-description: >
-  Dispatch development tasks to Claude Code with automatic callback on completion.
-  Supports Agent Teams (multi-agent parallel dev with dedicated Testing Agent),
-  cost controls (--max-budget-usd), model fallback, git worktree isolation,
-  custom subagents via --agents JSON, and MCP server integration.
-  Use when: (1) dispatching a coding task to Claude Code and wanting automatic
-  Telegram notification on completion, (2) running Agent Teams for parallel
-  dev+test workflows, (3) needing zero-polling task execution with Stop Hook
-  callback, (4) the user says 'use Claude Code to build/develop/create X',
-  (5) the user asks to dispatch or run a Claude Code task.
-  THIS IS THE DEFAULT for any 'build/develop/create a project' request —
-  prefer this over claude-code-clawdbot for anything that takes >2 min or
-  needs background execution.
+name: code-dispatch
+description: "Dispatch development tasks to Claude Code with automatic Telegram notification on completion. Supports Agent Teams for parallel dev+test workflows, cost controls (--max-budget-usd), model fallback, git worktree isolation, and custom subagents. Use for any build/develop/create task >2 minutes or needing background execution."
+user-invocable: true
+triggers:
+  - use Claude Code to build
+  - dispatch a coding task
+  - run a Claude Code task
+  - build a project with agent teams
+  - develop this in the background
+  - create a project and notify me when done
+  - run Claude Code with budget limit
+  - parallel agent development
 ---
 
 # Claude Code Dispatch Skill
